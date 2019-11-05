@@ -1,0 +1,57 @@
+<!-- <div class="container">
+
+  <ul>
+    <li ngFor></li>
+  </ul>
+
+
+    <tr *ngFor="let brew of brews">
+    <td >{{brew.id}}</td>
+    <td>  --  </td>
+    <td *ngIf="brew.brewery_type==='micro'">{{brew.name}}</td>
+
+  </tr> -->
+
+
+
+
+  <h1>Players Marketplace</h1>
+
+
+  <!-- <tr *ngFor="let player of Ballers">
+    <td > {{player.id}}</td>
+    <td>  </td>
+    <td>{{player.name}}!!.  </td>
+    <td>Age: {{player.age}} </td>
+    <td>Value: {{player.value}}</td><br/>
+  </tr> -->
+
+  <!-- <ul *ngFor="let player of Ballers">
+    <li > {{player.id}}</li>
+
+    <li>{{player.name}}!!.  </li>
+    <li>Age: {{player.age}} </li>
+    <li>Value: {{player.value}}</li><br/>
+  </ul> -->
+
+  <ul *ngFor="let player of Ballers">
+    <li> {{player.id}}<br/>
+
+    {{player.name}}!!.   <br/>
+     Age: {{player.age}}  <br/>
+     Value: {{player.value}} <br/></li>
+  </ul>
+
+
+
+
+
+<!-- <ul *ngIf="brews">
+  <li *ngFor="let dick of brews">
+    <p class="name">NAME: {{dick.name}}</p>
+    <p class="country">NATION: {{dick.country}}</p>
+    <p class="country">LOCATION: {{dick.longitude}}</p>
+    <a href="{{ dick.website_url }}" class="site">site</a>
+  </li>
+</ul> -->
+
