@@ -34,24 +34,30 @@
     <li>Value: {{player.value}}</li><br/>
   </ul> -->
 
-  <ul *ngFor="let player of Ballers">
-    <li> {{player.id}}<br/>
+  <!-- <ul *ngFor="let player of Ballers">
+    <li>
+    <p class="name">{{player.name}}</p>
+    <p class="position">{{player.position}}</p>
+    <p class="value">£{{player.value}} m</p>
+      </li>
+  </ul> -->
+<!--
+  <tr *ngFor="let player of Ballers">
+    <td> <p class="name">{{player.name}}</p> <br></td>
+    <td> <p class="position">{{player.position}}</p> </td>
+    <td> <p class="value">£{{player.value}} m</p> </td>
+  </tr> -->
 
-    {{player.name}}!!.   <br/>
-     Age: {{player.age}}  <br/>
-     Value: {{player.value}} <br/></li>
-  </ul>
 
 
 
 
-
-<!-- <ul *ngIf="brews">
-  <li *ngFor="let dick of brews">
-    <p class="name">NAME: {{dick.name}}</p>
-    <p class="country">NATION: {{dick.country}}</p>
-    <p class="country">LOCATION: {{dick.longitude}}</p>
-    <a href="{{ dick.website_url }}" class="site">site</a>
+<ul *ngIf="Ballers">
+  <li *ngFor="let player of Ballers">
+    <p class="name">{{player.name}}</p>
+    <p class="position">{{player.position}}</p>
+    <p class="value">£{{player.value}} m</p>
+    <!-- <a href="{{ player.website_url }}" class="site">site</a> -->
   </li>
-</ul> -->
+</ul>
 

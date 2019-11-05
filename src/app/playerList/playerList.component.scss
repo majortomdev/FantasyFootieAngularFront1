@@ -5,12 +5,12 @@ ul  {
   display: flex;
   flex-wrap: wrap;
 
-  li {
+ li {
     background: rgb(238, 238, 238);
     padding: 1em;
     margin-right: 10px;
     width: 20%;
-    height: 200px;
+    height: 100px;
     margin-bottom: 1em;
     display: flex;
     flex-direction: column;
@@ -20,13 +20,20 @@ ul  {
     }
 
     p.name {
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    p.position {
       font-weight: bold;
       font-size: 1.2rem;
+      text-align: center;
     }
-    p.country {
+    p.value{
       text-transform: uppercase;
-      font-size: .9rem;
+      font-size: 1.5rem;
       flex-grow: 1;
+      text-align: center;
     }
   }
 
