@@ -1,38 +1,4 @@
-<!-- by jk 23/09/19 -->
-
-<h1>Welcome!!!</h1>
-
-<div class="gallery-window">
-  <p>You've clicked <span (click)="countClick()">this</span>   {{clickCounter}}  times</p>
-</div>
-<!-- practise with ngModel below -->
-<!-- <div class="gallery-window">
-   <p>
-     <input type="text" [(ngModel)] ="name">
-     <br>
-     <strong>You said: </strong> {{ name }}
-   </p>
-</div> -->
-
- <!-- practice with ng-template here: ---- 2 ways to do style binding...-->
- <!-- <div class="gallery-window" [style.background-color]="clickCounter > 4 ? 'green': 'grey'"> -->
-
-  <!-- <div class="gallery-window" [ngStyle]="{
-   'background-color': clickCounter > 4 ? 'yellow': 'lightgray',
-   'border':           clickCounter > 2 ? '4px solid black': 'none'
- }"> -->
-
-<div class="gallery-window" [ngClass]="setClasses()">
-
-
-   <ng-template [ngIf]="clickCounter > 4" [ngIfElse]="none">
-     <p>The Click COUNTER is greater than 4</p>
-   </ng-template>
-
-   <ng-template #none>
-     <p>The click counter is low</p>
-   </ng-template>
- </div>
+<h2>My Current Team Selection</h2>
 
 
 

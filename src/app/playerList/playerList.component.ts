@@ -9,6 +9,7 @@ import { HttpService } from '../http.service';
 export class PlayerListComponent implements OnInit {
 
   Ballers: Object;
+  selectedPlayers: any[] = [];
 
   constructor(private httpService: HttpService) { }
 
@@ -18,6 +19,11 @@ export class PlayerListComponent implements OnInit {
         console.log(this.Ballers);
       })
   }
+
+  buyThisPlayer(player){
+    this.selectedPlayers.push(player);
+  }
+
 
 
 }

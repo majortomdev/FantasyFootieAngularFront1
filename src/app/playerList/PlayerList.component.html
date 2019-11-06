@@ -15,7 +15,7 @@
 
 
 
-  <h1>Players Marketplace</h1>
+  <h2>Players Marketplace</h2>
 
 
   <!-- <tr *ngFor="let player of Ballers">
@@ -51,13 +51,21 @@
 
 
 
-
+<div class="threeQuarterPage">
 <ul *ngIf="Ballers">
   <li *ngFor="let player of Ballers">
     <p class="name">{{player.name}}</p>
     <p class="position">{{player.position}}</p>
     <p class="value">£{{player.value}} m</p>
-    <!-- <a href="{{ player.website_url }}" class="site">site</a> -->
+    <button class="buyButton" on-click="buyThisPlayer(player)">Add to Squad</button>
   </li>
-</ul>
+  </ul>
+</div>
 
+
+<div class="personalTeam">
+
+       <p *ngFor="let picked of selectedPlayers">
+         {{picked.name}}</p>
+
+</div>

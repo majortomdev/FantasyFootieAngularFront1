@@ -15,14 +15,10 @@ export class HttpService {
 
  getPlayers() {
    return this.http.get('http://localhost:8080/players');
-    // .pipe(
-    //   catchError(this.handleError)
-    // );
   }
 
-  // handleError(error: HttpErrorResponse){
-  //   console.log("lalalalalalalala");
-  //   return throwError(error);
-  //   }
+  addThisPlayer() {
+
+  }
 
 }
