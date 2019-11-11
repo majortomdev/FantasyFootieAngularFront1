@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerListComponent } from '../playerList/playerList.component';
 
 
 @Component({

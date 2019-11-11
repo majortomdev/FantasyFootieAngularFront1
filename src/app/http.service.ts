@@ -6,6 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
+  url = 'http://localhost:8080/api';
+
   constructor(private http: HttpClient) { }
 
 //  getPlayers() {
@@ -14,11 +16,11 @@ export class HttpService {
 
 
  getPlayers() {
-   return this.http.get('http://localhost:8080/players');
+   return this.http.get(this.url + '/players');
   }
 
-  addThisPlayer() {
-
-  }
+  // postPlayer(player: Player) {
+  //   this.http.post(url + "addplayer", player)
+  //  }
 
 }

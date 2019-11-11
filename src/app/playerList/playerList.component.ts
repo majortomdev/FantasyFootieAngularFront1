@@ -10,6 +10,7 @@ export class PlayerListComponent implements OnInit {
 
   Ballers: Object;
   selectedPlayers: any[] = [];
+  teamCost: number =0;
 
   constructor(private httpService: HttpService) { }
 
@@ -22,6 +23,8 @@ export class PlayerListComponent implements OnInit {
 
   buyThisPlayer(player){
     this.selectedPlayers.push(player);
+    this.teamCost+= player.mvalue;
+    this.httpService.postPlayer(player);
   }
 
 

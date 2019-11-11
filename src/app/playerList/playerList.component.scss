@@ -1,5 +1,22 @@
-ul  {
+.threeQuarterPage {
+  border-left: 1%;
+  width: 78%;
+  float: left;
+}
+
+// .personalTeam {
+//   border: 1px solid green;
+//   width: 20%;
+//   float: right;
+//   margin-right: 1%;
+// }
+ul {
   list-style-type: none;
+}
+
+.ol1 {
+  list-style-type: none;
+  //list-style-type: decimal;
   margin: 0;
   padding: 0;
   display: flex;
