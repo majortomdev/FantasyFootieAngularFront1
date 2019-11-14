@@ -25,3 +25,21 @@ span {
 .notactive {
   background-color: salmon;
 }
+
+.mat-card {
+  max-width: 300px;
+  margin: auto;
+}
+
+.mat-card-avatar {
+  background-image: url('../../assets/img/DB.jpg');
+  background-size: cover;
+}
+
+.mat-card-actions {
+  display: flex;
+}
+
+.mat-card-actions .flex-spacer {
+  width: 100%;
+}

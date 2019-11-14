@@ -24,7 +24,7 @@ export class PlayerListComponent implements OnInit {
   buyThisPlayer(player){
     this.selectedPlayers.push(player);
     this.teamCost+= player.mvalue;
-    this.httpService.postPlayer(player);
+
   }
 
 
