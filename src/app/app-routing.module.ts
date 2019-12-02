@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PlayerListComponent } from './playerList/playerList.component';
 import { HomeComponent } from './home/home.component';
-import { LeagueComponent } from './league/league.component';
+import { ReviewComponent } from './review/review.component';
 
 //component with ' '(empty) path is the one that loads first
 const routes: Routes = [
     { path: '', component: HomeComponent},
     { path: 'players', component: PlayerListComponent},
-    { path: 'league', component: LeagueComponent}
+    { path: 'review', component: ReviewComponent}
 
 ];
 

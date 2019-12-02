@@ -7,7 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PlayerListComponent } from './playerList/playerList.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { LeagueComponent } from './league/league.component';
+import { ReviewComponent } from './review/review.component';
 import { InterceptorService } from './interceptor.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
     AppComponent,
     HomeComponent,
     PlayerListComponent,
-    LeagueComponent
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

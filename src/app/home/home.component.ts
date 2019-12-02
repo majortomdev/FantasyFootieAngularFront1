@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PlayerListComponent } from '../playerList/playerList.component';
+import { HttpService } from '../http.service';
 
 
 @Component({
@@ -9,26 +10,18 @@ import { PlayerListComponent } from '../playerList/playerList.component';
 })
 export class HomeComponent implements OnInit {
 
-  clickCounter: number = 0;
-  name: string = 'heeeehhee';
+  theLads: Object;
+  picture: string = '';
 
-  constructor() { }
+  constructor(private httpService: HttpService) { }
 
   ngOnInit() {
+    this.httpService.getPlayers().subscribe(data => {
+      this.theLads = data;
+      console.log(this.theLads);
+    })
+}
 
-  }
 
-  countClick() {
-    this.clickCounter ++;
-  }
-
-  setClasses () {
-    let myClasses = {
-      active: this.clickCounter > 4,
-      notactive: this.clickCounter <= 4,
-    }
-    return myClasses;
-
-  }
 
 }

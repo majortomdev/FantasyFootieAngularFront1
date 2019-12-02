@@ -1,3 +1,10 @@
+.container {
+  display: flex;
+}
+
+ul {
+  list-style-type: none;
+}
 span {
   font-weight: bold;
   background: rgb(165, 136, 136);
@@ -32,7 +39,7 @@ span {
 }
 
 .mat-card-avatar {
-  background-image: url('../../assets/img/DB.jpg');
+  //background-image: url('../../assets/img/DB.jpg');
   background-size: cover;
 }
 
