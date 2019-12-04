@@ -19,6 +19,10 @@ export class HttpService {
    return this.http.get(this.url + '/players');
   }
 
+ findThePlayer(id: number) {
+   return this.http.get(this.url + '/players/' + id);
+ }
+
   // postPlayer(player: Player) {
   //   this.http.post(url + "addplayer", player)
   //  }

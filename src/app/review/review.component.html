@@ -8,15 +8,24 @@
 
 
 
-</body>> -->
+</body> -->
 
 
 <div class="container color-dark">
   <div class="col">
-    <p>Add a Player Review</p>
+    <p>Select player index for review:</p>
+    <!-- <form #userForm="ngForm" (ngSubmit)="findPlayer()" novalidate> -->
+        <!-- <form #userForm="ngForm" (ngSubmit)="findThePlayer()" novalidate> -->
+          <form (ngSubmit)="findThePlayer()" novalidate>
+             <input type="text" [(ngModel)]="indx" name="indx" #myIndx>
+      <!-- <input type="text" class="form-control" (keyup.enter)="OnInput($event)"> -->
+      <input type="submit" (click)="findThePlayer(myIndx)" value="Find player">
+
+    </form>
+
   </div>
   <div class="col">
-    <p>Your Reviewed Players</p>
+    <p>Your Reviewed Players+ {{indx}}</p>
   </div>
 </div>
 <div class="container color-light">
