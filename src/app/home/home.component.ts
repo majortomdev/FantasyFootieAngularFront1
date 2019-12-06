@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PlayerListComponent } from '../playerList/playerList.component';
+//import { PlayerListComponent } from '../playerList/playerList.component';
 import { HttpService } from '../http.service';
 
 

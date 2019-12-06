@@ -21,9 +21,9 @@ export class PlayerListComponent implements OnInit {
       })
   }
 
-  buyThisPlayer(player){
+  buyThisPlayer(player) {
     this.selectedPlayers.push(player);
-    this.teamCost+= player.mvalue;
+    this.teamCost += player.mvalue;
 
   }
 

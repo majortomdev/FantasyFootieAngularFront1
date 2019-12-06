@@ -12,12 +12,16 @@ export class HttpService {
 
 //  getPlayers() {
 //    return this.http.get('http://jsonplaceholder.typicode.com/users');
-  //  }
+//    }
 
 
  getPlayers() {
    return this.http.get(this.url + '/players');
   }
+
+ getPlayer(id: number) {
+  return this.http.get(this.url + '/players/' + id);
+ }
 
   // postPlayer(player: Player) {
   //   this.http.post(url + "addplayer", player)
