@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Review } from './review';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,6 @@ export class HttpService {
 
   constructor(private http: HttpClient) { }
 
-//  getPlayers() {
-//    return this.http.get('http://jsonplaceholder.typicode.com/users');
-//    }
-
-
  getPlayers() {
    return this.http.get(this.url + '/players');
   }
@@ -23,8 +19,8 @@ export class HttpService {
   return this.http.get(this.url + '/players/' + id);
  }
 
-  // postPlayer(player: Player) {
-  //   this.http.post(url + "addplayer", player)
-  //  }
+  postReview(reviewObject: Review  ) {
+    return this.http.post<Review >(this.url + '/reviews/' + this.playerid, reviewObject);
+   }
 
 }

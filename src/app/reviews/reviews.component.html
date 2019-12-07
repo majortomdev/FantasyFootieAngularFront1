@@ -23,8 +23,9 @@
     </p>
      <form>
 
-      <textarea class="txtarea"> </textarea>
-      <input type="submit" class="btn" value="Submit Review for {{player.pName}}">
+      <textarea class="txtarea" id="pReview"> </textarea>
+      <button type="submit" class="btn" (click)="addReview()">Submit Review</button>
+      <!-- <input type="submit" class="btn" id="pReview" value="Submit Review for {{player.pName}}" (click)="addReview()"> -->
     </form>
   </div>
 </div>
