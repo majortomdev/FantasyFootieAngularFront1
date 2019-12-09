@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     this.httpService.getPlayers().subscribe(data => {
       this.theLads = data;
-      console.log(this.theLads);
+      //console.log(this.theLads);
     })
 }
 

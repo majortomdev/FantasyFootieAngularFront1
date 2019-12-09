@@ -9,6 +9,7 @@ import { Review } from '../review';
 })
 export class ReviewsComponent implements OnInit {
   review: Review = new Review();
+  playersListed: any;
   playerHere: object = {
     pName: '',
     age: ''
@@ -18,15 +19,11 @@ export class ReviewsComponent implements OnInit {
 
   constructor(private httpService: HttpService) { }
 
-  // ngOnInit() {
-  //   this.httpService.getPlayer(this.playerid).subscribe(data => {
-  //     this.player = data;
-  //     console.log(this.player);
-  //   })
-  // }
-
   ngOnInit() {
-
+    this.httpService.getPlayers().subscribe(data => {
+      this.playersListed = data;
+      console.log(this.playersListed);
+    })
 
   }
 

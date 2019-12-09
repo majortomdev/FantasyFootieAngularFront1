@@ -17,7 +17,7 @@ export class PlayerListComponent implements OnInit {
   ngOnInit() {
       this.httpService.getPlayers().subscribe(data => {
         this.Ballers = data;
-        console.log(this.Ballers);
+        //console.log(this.Ballers);
       })
   }
 
