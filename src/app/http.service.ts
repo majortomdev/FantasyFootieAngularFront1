@@ -1,30 +1,58 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { Review } from './review';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpService {
+  // const headers = new HttpHeaders();
+  // headers.
 
   url = 'http://localhost:8080/api';
 
   constructor(private http: HttpClient) { }
 
-//  getPlayers() {
-//    return this.http.get('http://jsonplaceholder.typicode.com/users');
-//    }
-
-
- getPlayers() {
+ public getPlayers() {
    return this.http.get(this.url + '/players');
   }
 
- getPlayer(id: number) {
+ public getPlayer(id: number) {
   return this.http.get(this.url + '/players/' + id);
  }
 
   // postPlayer(player: Player) {
   //   this.http.post(url + "addplayer", player)
   //  }
+
+  public postReview(review: Review  ) {
+    console.log('This playerid from service class: ' + review.playerId);
+    return this.http.post<Review>(this.url + '/reviews', review);
+   }
+
+
+
+
+
+
+
+  // postReview(review: Review): Observable<Review> {
+  //   return this.http.post(`${this.url}` + '/reviews', review);
+  // }
+
+  //import {Headers} from 'angular2/http';
+
+
+
+  // addUser(user : User){
+  //     return this.http.post(this._baseUrl + '/API/identity/user',user,{ headers: headers}).map((response: Response) =>{
+  //     console.log (response.json());
+  //     })
+ // }
+
+
+
 
 }

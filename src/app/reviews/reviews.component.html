@@ -18,13 +18,14 @@
 
 <div id="reviewsection">
     <p class="sm">Enter your player review(50 word max) for
-           {{player.pName}}
+           {{playerHere.pName}}
 
     </p>
      <form>
 
-      <textarea class="txtarea"> </textarea>
-      <input type="submit" class="btn" value="Submit Review for {{player.pName}}">
+      <textarea class="txtarea" id="pReview" > </textarea>
+      <button type="submit" class="btn" (click)="addReview()">Submit Review for {{playerHere.pName}}</button>
+      <!-- <input type="submit" class="btn" value="Submit Review for {{player.pName}}"> -->
     </form>
   </div>
 </div>
