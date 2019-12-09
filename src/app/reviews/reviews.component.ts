@@ -27,9 +27,16 @@ export class ReviewsComponent implements OnInit {
 
   }
 
+  changePlayerNo(event: any) {
+    this.playerNo = event.target.value;
+  }
+
+
   findPlayer() {
-    this.playerNo = +parseInt(document.getElementById('findHim').value, 10);
-    //console.log(this.playerNo);
+    // this.playerNo = +parseInt(document.getElementById('findHim')['value'], 10);
+    //i can access the value prop like above or by casting to htmlinpputelement like below..
+    this.playerNo = +parseInt(<HTMLInputElement>document.getElementById('findHim').value, 10);
+    console.log('from findplayer in rev.comp.ts()' + this.playerNo);
 
     this.httpService.getPlayer(this.playerNo).subscribe(data => {
       this.playerHere = data;
@@ -40,7 +47,7 @@ export class ReviewsComponent implements OnInit {
 }
 
   addReview(): void {
-    this.review.review = document.getElementById('pReview').value;
+    this.review.review = document.getElementById('pReview')['value'];
     this.review.playerId = 12; this.review.userId = 1234;
     console.log(this.review.userId +' is here anseao');
     document.getElementById('pReview').innerHTML = '';

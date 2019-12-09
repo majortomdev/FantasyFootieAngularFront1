@@ -6,18 +6,24 @@
   </div>
   <div class="col">
     <p>Players Ids</p>
-    <!-- <tr *ngFor="let player of playersListed">
-      <td>Player: {{player.pName}}</td>
-      <td>Id: {{player.id}}</td>
-    </tr> -->
+    <select >
+      <option *ngFor="let player of playersListed">{{player.pName}}</option>
+
+    </select>
   </div>
 </div>
 <div class="container color-light">
   <div class="col">
-
+    <p>Selected player id is : {{this.playerNo}}</p>
 <form action="">
-    <label for="find">Enter player id:</label>
-      <input id="findHim" type="text"><button (click)="findPlayer()">Find player</button>
+    <label for="find">Select player to review:</label>
+     <!-- <input id="findHim" type="text"><button (click)="findPlayer()">Find player</button> -->
+       <select   (ngModelChange)='changePlayerNo()' >
+        <option id="findHim" *ngFor="let player of playersListed" (change)='player.id'>{{player.pName}}</option>
+
+      </select>
+        <p>Selected player id is : {{this.playerNo}}</p>
+
 </form>
 
 <div id="reviewsection">
