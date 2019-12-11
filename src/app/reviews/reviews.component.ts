@@ -29,7 +29,7 @@ export class ReviewsComponent implements OnInit {
 
   findPlayer() {
     this.playerNo = +parseInt(document.getElementById('findHim').value, 10);
-    //console.log(this.playerNo);
+    console.log("from rviews.ts: "+this.playerNo);
 
     this.httpService.getPlayer(this.playerNo).subscribe(data => {
       this.playerHere = data;

@@ -1,39 +1,50 @@
 
 
 <div class="container color-dark">
-  <div class="col">
-    <p>Add a Player Review</p>
-  </div>
-  <div class="col">
-    <p>Players Ids</p>
-    <!-- <tr *ngFor="let player of playersListed">
-      <td>Player: {{player.pName}}</td>
-      <td>Id: {{player.id}}</td>
-    </tr> -->
-  </div>
-</div>
-<div class="container color-light">
-  <div class="col">
+    <div class="col">
+      <p>Add a Player Review<br>Check list for player id#</p>
+      <select  >
+          <option  *ngFor="let player of playersListed">{{player.pName}} : {{player.id}}</option>
+          </select>
+    </div>
+    <div class="col">
+      <p>Players Ids</p>
+      <!-- <tr *ngFor="let player of playersListed">
+        <td>Player: {{player.pName}}</td>
+        <td>Id: {{player.id}}</td>
+      </tr> -->
 
-<form action="">
-    <label for="find">Enter player id:</label>
-      <input id="findHim" type="text"><button (click)="findPlayer()">Find player</button>
-</form>
 
-<div id="reviewsection">
-    <p class="sm">Enter your player review(50 word max) for
-           {{playerHere.pName}}
 
-    </p>
-     <form>
-
-      <textarea class="txtarea" id="pReview" > </textarea>
-      <button type="submit" class="btn" (click)="addReview()">Submit Review for {{playerHere.pName}}</button>
-      <!-- <input type="submit" class="btn" value="Submit Review for {{player.pName}}"> -->
-    </form>
+    </div>
   </div>
-</div>
-  <div class="col">
-    <p class="life-container">Your previous reviews</p>
+  <div class="container color-light">
+    <div class="col">
+
+  <form action="">
+      <!-- <label for="find">Enter player id:</label> -->
+        <input id="findHim" type="text"><button (click)="findPlayer()">Enter player ID# to start review</button>
+
+  </form>
+
+  <div id="reviewsection">
+      <p class="sm">Enter your player review(50 word max) for
+             {{playerHere.pName}}
+
+      </p>
+       <form>
+
+        <textarea class="txtarea" id="pReview" > </textarea>
+        <button type="submit" class="btn" (click)="addReview()">Submit Review for {{playerHere.pName}}</button>
+        <!-- <input type="submit" class="btn" value="Submit Review for {{player.pName}}"> -->
+
+
+
+
+      </form>
+    </div>
   </div>
-</div>
+    <div class="col">
+      <!-- <p class="life-container">Your previous reviews</p> -->
+    </div>
+  </div>
