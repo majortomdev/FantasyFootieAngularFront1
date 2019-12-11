@@ -1,8 +1,10 @@
 
-
 <div class="container color-dark">
   <div class="col">
-    <p>Add a Player Review</p>
+    <p>Add a Player Review<br>Check list for player id#</p>
+    <select  >
+        <option  *ngFor="let player of playersListed">{{player.pName}} : {{player.id}}</option>
+        </select>
   </div>
   <div class="col">
     <p>Players Ids</p>
@@ -10,14 +12,18 @@
       <td>Player: {{player.pName}}</td>
       <td>Id: {{player.id}}</td>
     </tr> -->
+
+
+
   </div>
 </div>
 <div class="container color-light">
   <div class="col">
 
 <form action="">
-    <label for="find">Enter player id:</label>
-      <input id="findHim" type="text"><button (click)="findPlayer()">Find player</button>
+    <!-- <label for="find">Enter player id:</label> -->
+      <input id="findHim" type="text"><button (click)="findPlayer()">Enter player ID# to start review</button>
+
 </form>
 
 <div id="reviewsection">
@@ -30,10 +36,14 @@
       <textarea class="txtarea" id="pReview" > </textarea>
       <button type="submit" class="btn" (click)="addReview()">Submit Review for {{playerHere.pName}}</button>
       <!-- <input type="submit" class="btn" value="Submit Review for {{player.pName}}"> -->
+
+
+
+
     </form>
   </div>
 </div>
   <div class="col">
-    <p class="life-container">Your previous reviews</p>
+    <!-- <p class="life-container">Your previous reviews</p> -->
   </div>
 </div>

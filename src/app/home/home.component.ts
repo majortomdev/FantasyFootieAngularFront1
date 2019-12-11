@@ -10,16 +10,13 @@ import { HttpService } from '../http.service';
 })
 export class HomeComponent implements OnInit {
 
-  theLads: Object;
-  picture: string = '';
+  auser: Object;
+
 
   constructor(private httpService: HttpService) { }
 
   ngOnInit() {
-    this.httpService.getPlayers().subscribe(data => {
-      this.theLads = data;
-      //console.log(this.theLads);
-    })
+
 }
 
 

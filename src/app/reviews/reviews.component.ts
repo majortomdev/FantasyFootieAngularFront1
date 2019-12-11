@@ -28,19 +28,23 @@ export class ReviewsComponent implements OnInit {
   }
 
   findPlayer() {
-    this.playerNo = +parseInt(document.getElementById('findHim').value, 10);
-    //console.log(this.playerNo);
+    // this.playerNo = +parseInt(<HTMLInputElement>document.getElementById('findHim').value, 10);
+    this.playerNo = +parseInt(<HTMLInputElement>document.getElementById('findHim').value);
+    //this.playerNo = +parseInt(<HTMLInputElement>document.getElementById('findHim')).value;//without the cast
+    //to htmlelement's child, value prop doenst exist
+    console.log("from rviews.ts: "+this.playerNo);
 
     this.httpService.getPlayer(this.playerNo).subscribe(data => {
       this.playerHere = data;
       console.log(this.playerHere);
+      console.log("from revviws.ts this players age: "+this.playerHere.age);
     });
 
     document.getElementById('reviewsection').style.visibility = 'visible';
 }
 
   addReview(): void {
-    this.review.review = document.getElementById('pReview').value;
+    this.review.review = <HTMLInputElement>document.getElementById('pReview').value;
     this.review.playerId = 12; this.review.userId = 1234;
     console.log(this.review.userId +' is here anseao');
     document.getElementById('pReview').innerHTML = '';
