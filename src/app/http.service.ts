@@ -23,14 +23,17 @@ export class HttpService {
   return this.http.get(this.url + '/players/' + id);
  }
 
-  // postPlayer(player: Player) {
-  //   this.http.post(url + "addplayer", player)
-  //  }
 
   public postReview(review: Review  ) {
     console.log('This playerid from service class: ' + review.playerId);
     return this.http.post<Review>(this.url + '/reviews', review);
    }
+
+
+  public checkValidUser(username: string, password: string) {
+    return this.http.get(this.url + '/users/' + username + '/' + password);
+    //return;
+  }
 
 
 

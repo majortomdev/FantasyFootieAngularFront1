@@ -1,78 +1,29 @@
- <mat-card>
-  <mat-card-header>
-    <div mat-card-avatar></div>
-    <mat-card-title>Denis Bergkamp</mat-card-title>
-    <mat-card-subtitle>Awesome Striker</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="../../assets/img/DB.jpg">
-  <mat-card-content>
-    <p>Dennis Nicolaas Maria Bergkamp. Date of birth: May 10, 1969.
-      Place of birth: Amsterdam Netherlands. Age: 50. Height: 1.88 m</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button color="primary">RATE</button>
-    <button mat-button color="primary">DELETE</button>
-    <div class="flex-spacer"></div>
-    <button mat-icon-button><mat-icon>choose</mat-icon></button>
-  </mat-card-actions>
-</mat-card> -->
-  <li *ngFor="let lad of theLads">
-  <p>{{lad.name}}</p>
-</li>
+
+<div >
+  <h3>Welcome to the Ultimate Place</h3>
+
+</div>
+
+<div class="frontform">
+    <h4>Users Login</h4>
+<form (ngSubmit)="checkLogin()">
+  <label for="username">User Name: </label><input type="text" id="username" name="uname" [(ngModel)]="theusername">
+  <label for="password">Password</label><input type="text" id="password"name="pword" [(ngModel)]="thepassword">
+  <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</div>
+<h5>Or, if you are uninitiated, sign up here:</h5>
+<div class="frontform">
+  <h4>Sign Up For Ultimate glory</h4>
+    <form (ngSubmit)="signUp()">
+      <label for="username">User Name: </label><input type="text" id="username">
+      <label for="password">Password</label><input type="text" id="password">
+      <button type="submit" class="btn btn-primary">Submit Details</button>
+    </form>
+    </div>
 
 
 
-
-
-
-
-  <!-- <mat-card>
-   <div class="container">
-    <mat-card *ngFor="let lad of theLads">
-    <ul><li>
-
-  <mat-card-header>
-    <div mat-card-avatar></div>
-    <mat-card-title>{{lad.pName}}</mat-card-title>
-    <mat-card-subtitle></mat-card-subtitle>
-  </mat-card-header>
-
-  <img mat-card-image src='../{{lad.images}}'>
-
-  <mat-card-content>
-    <p>{{lad.fPosition}}</p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button color="primary">RATE</button>
-    <button mat-button color="primary">DELETE</button>
-    <div class="flex-spacer"></div>
-    <button mat-icon-button><mat-icon>choose</mat-icon></button>
-  </mat-card-actions>
-
-</li></ul>
-</mat-card>
-
-</div> -->
-
-
-
-
-
-
-
-
-
-
-<!-- <img src="../../assets/messi.jpg" > -->
-
-    <!-- <div *ngFor="let lad of theLads">
-     <p>{{lad.pName}}</p>
-    <p>{{lad.mvalue}}</p>
-    <p>{{lad.age}}</p>
-    <p>{{lad.fposition}}</p>
-    <p>{{lad.images}}</p> -->
-
-      <!-- <img [src]="../"+lad.images> -->
 
 
 

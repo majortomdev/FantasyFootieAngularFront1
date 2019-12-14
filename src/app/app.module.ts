@@ -12,13 +12,15 @@ import { InterceptorService } from './interceptor.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PlayerListComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,

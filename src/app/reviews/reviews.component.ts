@@ -9,12 +9,13 @@ import { Review } from '../review';
 })
 export class ReviewsComponent implements OnInit {
   review: Review = new Review();
+  playerreview: string;
   playersListed: any;
   playerHere: object = {
     pName: '',
     age: ''
  }
-
+  //playerHere: object;
   playerNo: number;
 
   constructor(private httpService: HttpService) { }
@@ -28,11 +29,14 @@ export class ReviewsComponent implements OnInit {
   }
 
   findPlayer() {
-    this.playerNo = +parseInt(document.getElementById('findHim').value, 10);
+    //this.playerNo = +parseInt( document.getElementById('findHim').value, 10);
+
     console.log("from rviews.ts: "+this.playerNo);
 
     this.httpService.getPlayer(this.playerNo).subscribe(data => {
+      console.log('data :'+data);
       this.playerHere = data;
+      console.log('this is from the component subscription to findplayer  :'+this.playerHere);
       console.log(this.playerHere);
     });
 
@@ -40,23 +44,15 @@ export class ReviewsComponent implements OnInit {
 }
 
   addReview(): void {
-    this.review.review = document.getElementById('pReview').value;
-    this.review.playerId = 12; this.review.userId = 1234;
-    console.log(this.review.userId +' is here anseao');
+    //this.review.review = <HTMLInputElement> document.getElementById('pReview').value;
+    //this.review.playerId = 12; this.review.userId = 1234;
+    this.review.review = this.playerreview;
+    console.log(this.review.userId + ' is here anseao');
     document.getElementById('pReview').innerHTML = '';
     this.httpService.postReview (this.review)
                 .subscribe(data => {
-                  alert("Review Added");
+                  alert("Review Added for "+this.playerHere.pName);
                 });
-
-    // .subscribe((data: any) => console.log(data),
-    //  error => console.log(error));
-    // this.review = new Review();
-
-
-  //this.httpService.postReview<Review>( this.review, this.playerid, this.userid);
-  //console.log(review);
-  //this.playerid//must be used to send it to db
 }
 
 
