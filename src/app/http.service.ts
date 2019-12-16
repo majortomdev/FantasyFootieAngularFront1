@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 import { Review } from './review';
 import { Observable } from 'rxjs';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +34,12 @@ export class HttpService {
   public checkValidUser(username: string, password: string) {
     return this.http.get(this.url + '/users/' + username + '/' + password);
     //return;
+  }
+
+  public newSignUp(newUser: User) {
+    console.log(this.url + ' is the url......');
+    // return this.http.post(this.url + '/users/', { newname, newpass});
+    return this.http.post<User>(this.url + '/users', newUser);
   }
 
 

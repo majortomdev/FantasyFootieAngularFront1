@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../http.service';
 import { Review } from '../review';
+import { PlayerListComponent } from '../playerList/playerList.component';
+import { Player } from '../player';
 
 @Component({
   selector: 'app-reviews',
@@ -9,12 +11,15 @@ import { Review } from '../review';
 })
 export class ReviewsComponent implements OnInit {
   review: Review = new Review();
+  //review: Review;
   playerreview: string;
   playersListed: any;
-  playerHere: object = {
-    pName: '',
-    age: ''
- }
+  playerHere: Player = new Player();
+//   playerHere: object = {
+//     pName: '',
+//     age: '',
+//     playerId: ''
+//  }
   //playerHere: object;
   playerNo: number;
 
@@ -29,24 +34,17 @@ export class ReviewsComponent implements OnInit {
   }
 
   findPlayer() {
-    //this.playerNo = +parseInt( document.getElementById('findHim').value, 10);
-
-    console.log("from rviews.ts: "+this.playerNo);
-
     this.httpService.getPlayer(this.playerNo).subscribe(data => {
-      console.log('data :'+data);
       this.playerHere = data;
-      console.log('this is from the component subscription to findplayer  :'+this.playerHere);
-      console.log(this.playerHere);
+      console.log("name: "+this.playerHere.pName+"id: "+this.playerHere.id+" Pos: "+this.
+      playerHere.fPosition+" Age: "+this.playerHere.age+" Value: "+this.playerHere.mValue+"M");
     });
-
     document.getElementById('reviewsection').style.visibility = 'visible';
 }
 
   addReview(): void {
-    //this.review.review = <HTMLInputElement> document.getElementById('pReview').value;
-    //this.review.playerId = 12; this.review.userId = 1234;
     this.review.review = this.playerreview;
+    this.review.playerId = this.playerNo;
     console.log(this.review.userId + ' is here anseao');
     document.getElementById('pReview').innerHTML = '';
     this.httpService.postReview (this.review)

@@ -4,7 +4,7 @@
 
 </div>
 
-<div class="frontform">
+<div class="frontforma">
     <h4>Users Login</h4>
 <form (ngSubmit)="checkLogin()">
   <label for="username">User Name: </label><input type="text" id="username" name="uname" [(ngModel)]="theusername">
@@ -12,13 +12,17 @@
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
 </div>
+
+
 <h5>Or, if you are uninitiated, sign up here:</h5>
-<div class="frontform">
+
+
+<div class="frontformb">
   <h4>Sign Up For Ultimate glory</h4>
-    <form (ngSubmit)="signUp()">
-      <label for="username">User Name: </label><input type="text" id="username">
-      <label for="password">Password</label><input type="text" id="password">
-      <button type="submit" class="btn btn-primary">Submit Details</button>
+  <form (ngSubmit)="newSignUp()">
+      <label for="newname">Enter your user name: </label><input type="text" id="newname" name="newname" [(ngModel)]="anewname">
+      <br><label for="newpassword">Choose a Password: </label><input type="text" id="newpassword"name="newpword" [(ngModel)]="anewpassword">
+      <br><button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
     </div>
 
