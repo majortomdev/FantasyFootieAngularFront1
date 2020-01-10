@@ -13,6 +13,7 @@ export class HttpService {
   // headers.
 
   url = 'http://localhost:8080/api';
+  //userA: User = new User();
 
   constructor(private http: HttpClient) { }
 
@@ -31,9 +32,13 @@ export class HttpService {
    }
 
 
-  public checkValidUser(username: string, password: string) {
-    return this.http.get(this.url + '/users/' + username + '/' + password);
-    //return;
+  public checkValidUser(username: string, password: string): Observable<any> {
+     return this.http.get(this.url + '/users/' + username + '/' + password);
+     //this.userA=  this.http.get(this.url + '/users/' + username + '/' + password);
+    // this.userA
+
+    //return this.userA;
+
   }
 
   public newSignUp(newUser: User) {

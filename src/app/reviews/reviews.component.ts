@@ -14,13 +14,13 @@ export class ReviewsComponent implements OnInit {
   //review: Review;
   playerreview: string;
   playersListed: any;
-  playerHere: Player = new Player();
+  //playerHere: Player = new Player();
 //   playerHere: object = {
 //     pName: '',
 //     age: '',
 //     playerId: ''
 //  }
-  //playerHere: object;
+  playerHere: object;
   playerNo: number;
 
   constructor(private httpService: HttpService) { }
@@ -36,8 +36,8 @@ export class ReviewsComponent implements OnInit {
   findPlayer() {
     this.httpService.getPlayer(this.playerNo).subscribe(data => {
       this.playerHere = data;
-      console.log("name: "+this.playerHere.pName+"id: "+this.playerHere.id+" Pos: "+this.
-      playerHere.fPosition+" Age: "+this.playerHere.age+" Value: "+this.playerHere.mValue+"M");
+      // console.log("name: "+this.playerHere.pName+"id: "+this.playerHere.id+" Pos: "+this.
+      // playerHere.fPosition+" Age: "+this.playerHere.age+" Value: "+this.playerHere.mValue+"M");
     });
     document.getElementById('reviewsection').style.visibility = 'visible';
 }
@@ -49,7 +49,7 @@ export class ReviewsComponent implements OnInit {
     document.getElementById('pReview').innerHTML = '';
     this.httpService.postReview (this.review)
                 .subscribe(data => {
-                  alert("Review Added for "+this.playerHere.pName);
+                  alert("Review Added for "+this.playerHere);
                 });
 }
 

@@ -37,7 +37,10 @@ export class HomeComponent implements OnInit {
          console.log('data :' + data);
             this.user = data;
 
-              alert("Welcome home "+this.user.userName);
+              alert("Welcome home "+this.user.userName+" your id is "+this.user.userId+
+              " and more: "+this.user.password);
+
+              //sessionStorage.setItem("userId", "sdfds");
        }
        );
   }
